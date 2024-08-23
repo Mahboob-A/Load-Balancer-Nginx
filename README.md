@@ -7,9 +7,41 @@
 - In this section, I have implemented a simple LB POC with Docker. 
 
 
+<br>
+
+### Instructions 
+
+- Please clone the repository 
+
+- cd to `src`
+
+#### Using Docker Compose 
+
+- Check Makefile to create the Network first and also the images if you want to spawn the containers manually instead of using docker-compose. 
+
+- once the network is created, you can run `make docker-up` and the project will be up and running. 
+
+- you can see more on: `src/docker/nginx/default.conf` for more details. 
+
+###############################################################
+
+
+#### Manual Mode 
+
+- you can also perform the manual mode. 
+
+- after creating the network, also create the necessary images. see Makefile for instructions. 
+
+- then you can run the `make` commands one by one to see the demonstration. 
+
+
+- Then visit: `127.0.0.1/app/test` to see the output. 
+
+
 ### Round Robin 
 ![lb-ngx-dock-round-robin](https://github.com/user-attachments/assets/f1de38b5-3bc3-4917-b9e7-ed9a9869bf05)
 
+<br><br>
 
 ### Weighted Round Robin 
 - Three servers. Traffic distributed as: 3, 2, 1

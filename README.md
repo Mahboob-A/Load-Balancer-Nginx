@@ -37,7 +37,7 @@
 
 - Then visit: `127.0.0.1/app/test` to see the output. 
 
-- NOTE that you need to install `Makefile` if you've not. If you're a Windows user, then you can copy the commands in the `Makefile`and run it directly. 
+- NOTE that you need to install `Makefile` if you do not have it in your system. If you're a Windows user, then you can copy the commands in the `Makefile`and run it directly. 
 
 
 ### Round Robin 

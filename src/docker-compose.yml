@@ -1,0 +1,54 @@
+services:
+  dj-app-01:
+   build: 
+      context: . 
+      dockerfile: ./docker/Dockerfile 
+   volumes: 
+    - static_volume:/usr/src/app/staticfiles
+    - media_volume:/usr/src/app/mediafiles
+   networks:
+    - lb-ngx-dkr-network 
+ 
+  dj-app-02:
+   build: 
+      context: . 
+      dockerfile: ./docker/Dockerfile 
+   volumes: 
+    - static_volume:/usr/src/app/staticfiles
+    - media_volume:/usr/src/app/mediafiles
+   networks:
+    - lb-ngx-dkr-network 
+
+  dj-app-03:
+   build: 
+      context: . 
+      dockerfile: ./docker/Dockerfile 
+   volumes: 
+    - static_volume:/usr/src/app/staticfiles
+    - media_volume:/usr/src/app/mediafiles
+   networks:
+    - lb-ngx-dkr-network 
+  
+  lb-nginx:
+    build:
+      context: ./docker/nginx/
+      dockerfile: Dockerfile
+    volumes: 
+    - static_volume:/usr/src/app/staticfiles
+    - media_volume:/usr/src/app/mediafiles
+    ports:
+     - "80:80"
+    networks:
+      - lb-ngx-dkr-network 
+    
+networks:
+   lb-ngx-dkr-network:
+    driver: bridge 
+
+volumes:
+  static_volume:
+  media_volume:
+   
+# docker compose -p lb-ngnx-docker up --build -d --remove-orphans
+
+# docker compose -p lb-ngnx-docker down

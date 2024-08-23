@@ -1,7 +1,7 @@
 
 FROM python:3.12-slim-bullseye
 
-ARG APP_HOME=/use/src/app
+ARG APP_HOME=/usr/src/app
 
 COPY requirements/base.txt /tmp/requirements/base.txt 
 
